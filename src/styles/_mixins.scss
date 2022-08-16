@@ -1,0 +1,47 @@
+@use "./variables";
+
+@mixin screen-sm {
+  @media only screen and (max-width: variables.$screen-sm) {
+    // screens smaller than 480px
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media only screen and (min-width: variables.$screen-sm) {
+    // screens wider than 480px
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media only screen and (min-width: variables.$screen-md) {
+    // screens wider than 768px
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media only screen and (min-width: variables.$screen-lg) {
+    // screens wider than 976px
+    @content;
+  }
+}
+
+@mixin padding-lr {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include screen-md {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+  @include screen-lg {
+    padding-left: 3.8rem;
+    padding-right: 3.8rem;
+  }
+  @include screen-xl {
+    padding-left: 6.8rem;
+    padding-right: 6.8rem;
+  }
+}

@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
+    "local": "vite dev --host 192.168.43.12",
 		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",

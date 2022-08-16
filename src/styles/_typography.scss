@@ -1,0 +1,62 @@
+@use "./mixins";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+  // font-family
+  --ff-serif: serif;
+  --ff-mono: monospace;
+  --ff-sans: "Raleway", sans-serif;
+  // font-size
+  font-size: 62.5%;
+  --fs-xs: 1.2rem;
+  --fs-sm: 1.4rem;
+  --fs-base: 1.6rem;
+  --fs-md: 2rem;
+  --fs-lg: 2.4rem;
+  --fs-xl: 2.8rem;
+  --fs-2xl: 3.2rem;
+
+  @include mixins.screen-md {
+    --fs-base: 1.8rem;
+    --fs-md: 2.2rem;
+    --fs-lg: 2.6rem;
+    --fs-xl: 3rem;
+    --fs-2xl: 3.4rem;
+  }
+
+  @include mixins.screen-lg {
+    --fs-lg: 3rem;
+    --fs-xl: 3.4rem;
+    --fs-2xl: 3.8rem;
+  }
+}
+
+body {
+  font-size: var(--fs-base);
+  font-family: var(--ff-sans);
+}
+
+strong {
+  font-size: var(--fs-base);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: var(--fs-md);
+  font-weight: 500;
+}
+
+h2 {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  font-weight: 500;
+}
+
+svg {
+  line-height: 0;
+}
