@@ -2,9 +2,10 @@
 	import { page } from '$app/stores';
 	import Github from '$lib/icons/Github.svelte';
 	import Phone from '$lib/icons/Phone.svelte';
-	import Sun from '$lib/icons/Sun.svelte';
 	import Twitter from '$lib/icons/Twitter.svelte';
 	import WhatsApp from '$lib/icons/WhatsApp.svelte';
+
+  import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte';
 
 	// state
 	let open: boolean = false;
@@ -36,10 +37,7 @@
 	</nav>
 
   <div class="header__buttons">
-    <button class="header__theme">
-      <span class="header__theme__icon"> <Sun /> </span>
-      <span class="header__theme__name">light theme</span>
-    </button>
+    <ThemeSwitcher />
   
     <button class="header__burger" class:open on:click={() => (open = !open)}>
       <span class="bar" />
@@ -87,19 +85,6 @@
         cursor: pointer;
       }
     }
-
-		&__theme {
-			display: flex;
-			align-items: center;
-			gap: 6px;
-			line-height: 0;
-			&__name {
-				font-size: var(--fs-sm);
-			}
-			&__icon {
-				font-size: var(--fs-md);
-			}
-		}
 
 		&__burger {
 			box-sizing: content-box;

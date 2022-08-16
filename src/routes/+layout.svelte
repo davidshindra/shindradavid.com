@@ -3,14 +3,18 @@
 
 	import Header from '$lib/components/sections/Header.svelte';
 	import Footer from '$lib/components/sections/Footer.svelte';
+
+  import { theme } from '$lib/stores';
+  import { session } from '$app/stores';
+  import { browser } from '$app/env';
 </script>
 
-<div class="app" data-theme='light'>
+<div class="app" data-theme={browser ? $theme : $session.theme}>
 	<header>
 		<Header />
 	</header>
 
-	<main>
+	<main class="app__main">
 		<slot />
 	</main>
 
@@ -18,3 +22,13 @@
 		<Footer />
 	</footer>
 </div>
+
+<style lang="scss">
+  .app {
+    &__main {
+      @include padding-lr();
+    }
+  }
+</style>
+
+

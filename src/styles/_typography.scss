@@ -1,12 +1,12 @@
 @use "./mixins";
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Nunito:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 :root {
   // font-family
   --ff-serif: serif;
-  --ff-mono: monospace;
-  --ff-sans: "Raleway", sans-serif;
+  --ff-sans: "Nunito", Arial, Helvetica, sans-serif;
+  --ff-mono: "Fira Code", "Fira Mono", "DejaVu Sans Mono", monospace;
   // font-size
   font-size: 62.5%;
   --fs-xs: 1.2rem;
@@ -30,11 +30,16 @@
     --fs-xl: 3.4rem;
     --fs-2xl: 3.8rem;
   }
+
+  // line-height
+  --lh-sm: 1.2;
+  --lh-base: 1.6;
 }
 
 body {
   font-size: var(--fs-base);
   font-family: var(--ff-sans);
+  line-height: var(--lh-base);
 }
 
 strong {
@@ -45,16 +50,19 @@ strong {
 h3 {
   font-size: var(--fs-md);
   font-weight: 500;
+  line-height: var(--lh-sm);
 }
 
 h2 {
   font-size: var(--fs-lg);
   font-weight: 500;
+  line-height: var(--lh-sm);
 }
 
 h1 {
   font-size: var(--fs-xl);
   font-weight: 500;
+  line-height: var(--lh-sm);
 }
 
 svg {
