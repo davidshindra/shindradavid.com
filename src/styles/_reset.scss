@@ -16,6 +16,10 @@ textarea {
   font-family: inherit;
   font-weight: inherit;
   background-color: inherit;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 a {
